@@ -51,10 +51,9 @@ jQuery.fn.extend({
     console.log("City id: "+city_id);
     $(city_id_field).val(city_id);
     $(city_field).val(city);
-    $(state_field).filter(function() {
-        //may want to use $.trim in here
-        return $(this).text() == state;
-    }).prop('selected', true);
+    if ($(state_field).length) {
+      $(state_field).val(state);
+    }
 
   }
 
